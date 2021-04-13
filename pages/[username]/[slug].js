@@ -6,6 +6,7 @@ import AuthCheck from "../../components/AuthCheck"
 import { useContext } from "react"
 import { UserContext } from "../../lib/context"
 import Link from "next/link"
+import HeartButton from "../../components/HeartButton"
 
 export default function PostPage(props) {
 	const postRef = firestore.doc(props.path)
@@ -33,7 +34,7 @@ export default function PostPage(props) {
 					</Link>
 				}
 			>
-				Heart
+				<HeartButton postRef={postRef} />
 			</AuthCheck>
 
 			{currentUser?.uid === post.uid && (
