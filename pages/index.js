@@ -3,14 +3,13 @@ import { firestore, postToJSON, fromMillis } from "../lib/firebase"
 import { useState } from "react"
 import PostFeed from "../components/PostFeed"
 
-const LIMIT = 1
+const LIMIT = 5
 
 export default function Home(props) {
 	const [posts, setPosts] = useState(props.posts)
 	const [loading, setLoading] = useState(false)
 	const [postsEnd, setPostsEnd] = useState(false)
 
-	console.log(posts, posts.length)
 	const getMorePosts = async () => {
 		setLoading(true)
 		const last = posts[posts.length - 1]
