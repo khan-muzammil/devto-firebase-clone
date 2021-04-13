@@ -33,7 +33,7 @@ export default function PostPage(props) {
 					</Link>
 				}
 			>
-				button
+				Heart
 			</AuthCheck>
 
 			{currentUser?.uid === post.uid && (
